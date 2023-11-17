@@ -1,0 +1,1 @@
+This repo contains practice exercises related to the course Web Technologies, which includes HTML, CSS, JS, node and express.
