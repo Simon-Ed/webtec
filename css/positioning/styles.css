@@ -1,0 +1,33 @@
+.parent {
+    
+}
+
+.box-1 {
+    position: absolute;
+    top: 0;
+    background-color: cadetblue;
+}
+
+.box-2 {
+    width: 600px;
+    height: 600px;
+    background-color: blueviolet;
+}
+
+.box-3 {
+    width: 400px;
+    height: 400px;
+    background-color: green;
+}
+
+.box-4 {
+    width: 200px;
+    height: 200px;
+    background-color: firebrick;
+}
+
+.box-1, .box-2, .box-3 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
