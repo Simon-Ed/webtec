@@ -60,7 +60,7 @@ Boxes can be hidden with the property ```visiblity```, which is often usen to to
 
 ### margin and padding
 Margin is the space outside box. Padding is the space inside a box. Multivalue syntax:
-```
+```css
 margin: 10px; /* value applied to all edges */
 margin: 10px 5%; /* top/bottom left/right */
 margin: 10px 15px 20px; /* top left/right bottom */
@@ -144,3 +144,73 @@ The fixed layouts will not adapt to screen size, because the width of elements a
 
 The liquid layouts *will* adapt to screen size, because the width of their elements are set with %. In addition properties such as min/max can be used to set boundaries. Example: [https://htmlandcssbook.com/code-samples/chapter-15/liquid-layout.html](https://htmlandcssbook.com/code-samples/chapter-15/liquid-layout.html)
 
+# Flex
+In the flex layout model, the children of a flex container can be laid out in any direction. Their childeren can "flex" their sizes, either growing to fill unsused space or shrinking to avoid overflowing the parent. Flex also allows to manipulate both horizontal and vertical alignment (only one at the time).
+
+To create a flex container the element property `display` is set to *flex* or *inline-flex*. All direct children of the flex container becomes flex items. Flexbox is one dimensional, and the main axis can be set with `flex-direction` to values:
+- row
+- row-reverse
+- column
+- column-reverse
+
+`flex-wrap: wrap` wrap lines to the next line, if items are too large to be displayed on a single line. `flex-wrap: nowrap` is the default value and will shrink elements to fit the container. 
+
+#### Flex positioning
+- `justify-content` is used to align the items on the main axis
+    - flex-start
+    - flex-end
+    - center
+    - space-between, equal amount of space between each item.
+    - space-around, equal amount of space between items, but half that on the ends.
+    - space-evenly, equal amount of space between items, same on the ends.
+- `align-items` is used to align items on the cross axis. The initial value is stretch.
+    - Same values as `justify-content`, the result is just a bit different.
+- `align-self` is used to target alignment on the cross axis of a single items.
+
+#### Available space
+The following properties controls the way available space on the main axis is distributed among items. 
+- `flex-basis` takes the items size. Available space will be placed after the last item.
+![Alt text](image.png)
+- `flex-grow` property has a positive integer value, that controls how the space is shared between items. Value 1 will make them share it equally.
+![Alt text](image-1.png)
+- `flex-shrink` is used if we dont have enough space for all items.
+
+#### Gap
+`column-gap` and `row-gap` can be used to create gaps between between items and between flex lines. However `row-gap` requires `flex-wrap: wrap` to have an effect.
+
+# Grid
+The grid is awesome, because it allows us to create two-dimensional grid systems. A fixed grid uses px (or simmilar) for units, while a flexible uses f.ex precentages or fr unit. A design can also use both.
+![Alt text](image-2.png)
+
+The grid container is made with `display: grid`, or `display: inline-grid`. All direct children of the grid element becomes grid items.
+
+#### Grid tracks
+Rows are defined with `grid-template-rows` and columns with `grid-template-columns`. These can also be referred to as tracks, and they define the space between two lines on the grid. The css function `repeat()` can be useful for creating grids.
+
+#### Positioning grid items
+To position items on tracks the following proterties are used:
+- `grid-column-start`
+- `grid-column-end`
+- `grid-row-start`
+- `grid-row-end`
+
+A shorthand for those proterties are simply `grid-column` and `grid-row` where a `/` is used to separate the start and end. The start line comes before the `/` and the end after it.
+
+Grid items may span more than one cells by both row and column. This is called grid area. This is done with the property `grid-template-areas` to specify which cells belong to a specific item. Areas in the grid can be named which makes the stylesheet look cleaner. Using `.` in the grid template marks an empty cell.
+
+Gutters (also called alleys) create gaps between cells. Simmilar to flexbox. The following properties can be used:
+- `column-gap`
+- `row-gap`
+- or the shortcut `gap`
+
+# Media queries
+CSS media queries are a way to target browser/device by certain characteristics. Most common use is to target specific viewport ranges and apply custom styles. Example of media query:
+
+```css
+@media (min-width: 30em) and (orientation: landscape) {
+    /* ... */
+}
+```
+
+#### Mobile first
+This approach states that you create the layout for narrow screen/mobile devices first. Then layout for wider screens shuch as computer monitors are layered on top of that default later.
