@@ -170,9 +170,9 @@ To create a flex container the element property `display` is set to *flex* or *i
 #### Available space
 The following properties controls the way available space on the main axis is distributed among items. 
 - `flex-basis` takes the items size. Available space will be placed after the last item.
-![Alt text](image.png)
+![Alt text](img/image.png)
 - `flex-grow` property has a positive integer value, that controls how the space is shared between items. Value 1 will make them share it equally.
-![Alt text](image-1.png)
+![Alt text](img/image-1.png)
 - `flex-shrink` is used if we dont have enough space for all items.
 
 #### Gap
@@ -180,7 +180,7 @@ The following properties controls the way available space on the main axis is di
 
 # Grid
 The grid is awesome, because it allows us to create two-dimensional grid systems. A fixed grid uses px (or simmilar) for units, while a flexible uses f.ex precentages or fr unit. A design can also use both.
-![Alt text](image-2.png)
+![Alt text](img/image-2.png)
 
 The grid container is made with `display: grid`, or `display: inline-grid`. All direct children of the grid element becomes grid items.
 
