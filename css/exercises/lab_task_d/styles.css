@@ -57,18 +57,9 @@ footer {
     }
 
     article {
-        flex: 0 0 100%;
-        order: 2;
-    }
-
-    .aside-1 {
-        flex: 0 0 50%;
-        order: 1;
-    }
-    
-    .aside-2 {
-        flex: 0 0 50%;
-        order: 1;
+        order: -1;
+        min-width: 100%;
+        flex: 1 0 100%;
     }
 }
 
