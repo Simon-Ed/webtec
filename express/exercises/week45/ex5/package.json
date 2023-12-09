@@ -1,0 +1,11 @@
+{
+    "name": "hello-world",
+    "author": "Simon E.",
+    "private": true,
+    "dependencies": {
+        "consolidate": "^1.0.3",
+        "ejs": "^3.1.9",
+        "express": "^4.18.2",
+        "walrus": "^0.10.1"
+    }
+}
