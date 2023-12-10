@@ -190,7 +190,7 @@ When an event occurs the *event object* contains information about the event, su
 # JS timeline
 
 ## defer vs. async
-![Alt text](img/image.png)
+![Alt text](image.png)
 
 # Browser APIs
 
